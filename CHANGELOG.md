@@ -1,5 +1,9 @@
 # Changelog
 
+## UNRELEASED
+
+- Add `NewRocksDBWithRawDB` for easier turning the options.
+
 ## 0.6.7
 
 **2022-2-21**
