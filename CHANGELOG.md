@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Migrate to linxGnu/grocksdb to support rocksdb v7
+
 ## 0.6.7
 
 **2022-2-21**
