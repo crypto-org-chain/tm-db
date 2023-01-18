@@ -60,7 +60,7 @@ func NewRocksDBWithOptions(name string, dir string, opts *grocksdb.Options) (*Ro
 	return NewRocksDBWithRawDB(db, ro, wo, woSync), nil
 }
 
-func NewRocksDBWithRawDB(db *gorocksdb.DB, ro *gorocksdb.ReadOptions, wo *gorocksdb.WriteOptions, woSync *gorocksdb.WriteOptions) *RocksDB {
+func NewRocksDBWithRawDB(db *grocksdb.DB, ro *grocksdb.ReadOptions, wo *grocksdb.WriteOptions, woSync *grocksdb.WriteOptions) *RocksDB {
 	return &RocksDB{
 		db:     db,
 		ro:     ro,
