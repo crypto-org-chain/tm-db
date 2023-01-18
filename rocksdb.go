@@ -1,3 +1,4 @@
+//go:build rocksdb
 // +build rocksdb
 
 package db
@@ -52,14 +53,14 @@ func NewRocksDBWithOptions(name string, dir string, opts *gorocksdb.Options) (*R
 	if err != nil {
 		return nil, err
 	}
-	return NewRocksDBWithRawDB(db), nil
-}
-
-func NewRocksDBWithRawDB(db *gorocksdb.DB) *RocksDB {
 	ro := gorocksdb.NewDefaultReadOptions()
 	wo := gorocksdb.NewDefaultWriteOptions()
 	woSync := gorocksdb.NewDefaultWriteOptions()
 	woSync.SetSync(true)
+	return NewRocksDBWithRawDB(db, ro, wo, woSync), nil
+}
+
+func NewRocksDBWithRawDB(db *gorocksdb.DB, ro *gorocksdb.ReadOptions, wo *gorocksdb.WriteOptions, woSync *gorocksdb.WriteOptions) *RocksDB {
 	return &RocksDB{
 		db:     db,
 		ro:     ro,
