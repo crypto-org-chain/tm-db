@@ -3,6 +3,7 @@ module github.com/tendermint/tm-db
 go 1.17
 
 require (
+	github.com/cockroachdb/pebble v0.0.0-20230117234908-f91ad392a02b
 	github.com/dgraph-io/badger/v2 v2.2007.2
 	github.com/gogo/protobuf v1.3.2
 	github.com/golang/protobuf v1.4.3 // indirect
